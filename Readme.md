@@ -6,8 +6,8 @@ data (i.e. instance of classes filled in with the right details for the test).
 One way is test fixtures but those have a number of problems, i.e.
 they make a test hard to read because you need to refer to the fixture
 to actually see what the data are. Also, if the fixtures are shared, then
-they are relevant to many tests which makes them even harder to read and
-maintain.
+they are coupled to many tests which makes them even harder to read and
+maintain. A change in the fixture may break a number of tests.
 
 For some time now I've been using a mock builder pattern which makes
 creating test data a lot easier, readable and maintainable.
