@@ -43,8 +43,10 @@ the test, and why the id is blank? Is it even relevant? What if we add an
 extra field in `Transaction`, our test won't compile and we will have to
 add more irrelevant data for testing the `reduceBy` method.
 
-Ofcourse we could extract the instance to a fixture but that complicates the code,
-especially if we want to reuse the fixture.
+Of course, we could extract the instance to a fixture but that complicates the code,
+especially if we want to reuse the fixture. (Note that fixtures were meant to share
+components like database connections etc. but many projects use fixtures to share
+testing data)
 
 ```scala
 trait TransactionFixture:
