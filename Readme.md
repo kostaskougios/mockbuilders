@@ -47,12 +47,19 @@ Ofcourse we could extract the instance to a fixture but that complicates the cod
 especially if we want to reuse the fixture.
 
 ```scala
+trait TransactionFixture:
+  val MyTransaction = Transaction("",10)
+
+    ... later on ...
+
 test("reduce reduces the amount") new TransactionFixture {
     MyTransaction.reduceBy(2) should be(MyTransaction.copy(amount=8))
   }
 ```
 
-In the above example we can't anymore see what the amount is before it was reduced.
+In the test itself, we can't anymore see what the amount is before it was `reducedBy`. Also the `TransactionFixture`
+standalone seems to contain meaningless data. And it suffers from the maintenance issues we mentioned i.e. when adding
+a field to the `Transaction` class.
 
 Even more if we reuse the fixture, then it would be hard to change the fixture
 data due to the coupling of many tests with 1 fixture.
