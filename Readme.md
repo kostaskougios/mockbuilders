@@ -183,7 +183,9 @@ the `Transaction` class.
 ## Summary
 
 This is a nice and handy pattern I am using in a number of projects from testing data via spark case classes to mocking
-domain model or DTO classes for api's. It makes the tests a lot easier to read and maintain. It also isolates the tests
+domain model or DTO classes for api's. It makes the tests a lot easier to write, read and maintain. It also isolates the tests
 from code changes.
+
+## Sample code
 
 All the code is available in this repository, feel free to examine it.
