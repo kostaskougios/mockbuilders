@@ -136,7 +136,7 @@ object ModelBuilders:
   def transaction(
       id: String = "transaction-id",
       amount: Int = 1,
-      dateTime: ZonedDateTime = zonedDateTime()
+      dateTime: ZonedDateTime
   ) = Transaction(
     id,
     amount,
@@ -144,7 +144,7 @@ object ModelBuilders:
   )
 ```
 
-Well ok but we need an easy way to create `ZoneDateTime` instances. Let's use
+Well ok, but we need an easy way to create `ZoneDateTime` instances. Let's use
 the mock builder pattern, as we will see it will come handy in the tests.
 
 ```scala
@@ -171,7 +171,7 @@ object ModelBuilders:
   )
 ```
 
-Ok now we can easily create `Transaction` and `ZoneDateTime`. We are now ready
+Now we can easily create `Transaction` and `ZoneDateTime`. We are ready
 to test the `isAfter` method:
 
 ```scala
@@ -197,4 +197,4 @@ from code changes.
 
 ## Sample code
 
-All the code is available in this repository, feel free to examine it.
+All the code is available in this repository.
